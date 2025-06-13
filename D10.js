@@ -421,6 +421,18 @@ const halfTree = function (n) {
   }
 };
 halfTree(3);
+
+// ||
+
+// let albero = [];
+// const asterisco = "*";
+// const halfTree = function (n) {
+//   for (let i = 0; i < n; i++) {
+//     albero.push(asterisco);
+//     console.log(albero);
+//   }
+// };
+// halfTree(3);
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -441,7 +453,7 @@ const isItPrime = function (n) {
   if (n > 1 && n % 1 === 0 && n % n === 0) {
     console.log(casualeN);
     console.log(true);
-  } else if (n < 1 && n % 1 === 2 && n % n === 2) {
+  } else {
     console.log(false);
   }
 };
