@@ -348,59 +348,58 @@ const removeIndex = function (n) {
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
-document.getElementById("container");
+const container = document.getElementById("container");
+console.log(container);
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 const allTd = function () {
-  const tuttiTd = document.getElementsByTagName("td");
-  // console.log(tuttiTd);
+  const tuttiTd = document.querySelectorAll("td");
+  console.log(tuttiTd);
 };
 allTd();
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+const tuttiTd = document.querySelectorAll("td");
 const contentInTd = function () {
-  const tuttiTd = document.getElementsByTagName("td");
-  for (let i = 0; i < tuttiTd; i++) {
-    const td = tuttiTd[i];
+  tuttiTd.forEach((td) => {
     console.log(td.textContent);
-  }
+  });
 };
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
-// const redBackgrounf = function () {
-//   const tuttiLink = document.getElementsByTagName("a");
-//   tuttiLink.style.backgroundColor = "red";
-// };
-// redBackgrounf();
+
+document.querySelectorAll("a").forEach((a) => {
+  a.style.backgroundColor = "red";
+});
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-// const addLi = function () {
-//   const lista = document.getElementById("myList");
-//   const newLi = document.createElement("li");
-//   lista.appendChild(newLi);
-// };
-// addLi();
-
+const nuovoElemento = document.createElement("li");
+const list = document.getElementById("mylist");
+const funzione = function () {
+  list.appendChild(nuovoElemento);
+};
+funzione();
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
-// const svuota = function () {
-//   const lista = document.getElementById("myList");
-//   lista.innerHTML = "";
-// };
-// svuota();
+const svuota = function () {
+  list.innerText = " ";
+};
+svuota();
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+const tuttiTr = document.querySelectorAll("tr");
 const addCss = function () {
-  const tr = document.getElementsByTagName("tr")[0];
-  tr.classList.add("test");
+  tuttiTr.forEach((tr) => {
+    tr.classList.add("test");
+  });
 };
-
+addCss();
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
@@ -414,9 +413,12 @@ const addCss = function () {
   ***
 
 */
+let albero = "*";
 const halfTree = function (n) {
-  const asterisco = n + "*";
-  console.log(asterisco);
+  for (let i = 0; i < n; i++) {
+    albero = albero + albero;
+    console.log(albero);
+  }
 };
 halfTree(3);
 /* ESERCIZIO 28
@@ -434,7 +436,17 @@ halfTree(3);
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+const casualeN = Math.floor(Math.random() * 1000);
+const isItPrime = function (n) {
+  if (n > 1 && n % 1 === 0 && n % n === 0) {
+    console.log(casualeN);
+    console.log(true);
+  } else if (n < 1 && n % 1 === 2 && n % n === 2) {
+    console.log(false);
+  }
+};
 
+isItPrime(casualeN);
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
 const movies = [
